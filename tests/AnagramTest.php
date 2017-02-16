@@ -1,11 +1,17 @@
 <?php
-    require_once "src/Anagram.php";
+    require_once "src/ConcatString.php";
 
     class AnagramTest extends PHPUnit_Framework_TestCase
     {
-        function test_anagramFinder_blank_input()
+        function test_concatWithOneSpace()
         {
             // Arrange
+            // Tests are a set of Phrase1, Phrase2, Expected Result
+            $tests = array(
+              array('hello', 'There', 'hello There'),
+              array(' Extra Extra ', 'Read All About it! '),
+              array('More', '  is better', '')
+            );
             $new_anagram = new Anagram;
             $word = "";
             $possible_list = array();
